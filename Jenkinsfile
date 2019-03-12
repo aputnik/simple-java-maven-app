@@ -5,6 +5,9 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
+    parameters { 
+    	choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') 
+    }
     stages {
         stage('Build') { 
             steps {
